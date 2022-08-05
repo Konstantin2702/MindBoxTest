@@ -21,5 +21,32 @@ namespace Figures
             var p = (A + B + C) / 2;
             return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
+
+
+        public bool isRectangular()
+        {
+            if(A > B && A > C)
+            {
+                if(A * A == B * B + C * C)
+                {
+                    return true;
+                }
+            }
+            else if (B > A && B > C)
+            {
+                if (B * B == A * A + C * C)
+                {
+                    return true;
+                }
+            }
+            else if (C > A && C > B)
+            {
+                if (C * C == A * A + B * B)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
