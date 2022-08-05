@@ -4,12 +4,28 @@ namespace Figures
 {
     public class Circle:Figure
     {
-        public double Radius { get; set; } = 0;
-
+        private double radius;
+        public double Radius
+        {
+            get
+            {
+                return radius;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    radius = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Sides of triangle should be greater than 0 ");
+                }
+            }
+        }
         public override double CalcSquare()
         {
-            if (Radius <= 0)
-                throw new ArgumentException("Radius should be greater than 0 ");
+           
             return Radius * Math.PI;
         }
     }
